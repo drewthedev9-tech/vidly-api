@@ -64,6 +64,7 @@ router.put("/:id", [auth], async (req, res) => {
   res.send(movie);
 });
 
+// have to be admin to delete.
 router.delete("/:id", [auth, admin], async (req, res) => {
   const movie = await Movie.findByIdAndRemove(req.params.id);
 
